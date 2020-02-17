@@ -1,8 +1,14 @@
 a {
   color: white;
 }
+html, body {
+	height: 100%;
+}
 
 /* visited link */
 a:hover {
   color: red;
+}
+.my_banner{
+	min-height: 100%;
 }
