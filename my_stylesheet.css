@@ -3,6 +3,11 @@ a {
 }
 html, body {
 	height: 100%;
+	background-image: url("img/cat.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+    background-size: cover;
+
 }
 
 /* visited link */
