@@ -7,7 +7,6 @@ html, body {
 	background-position: center;
 	background-repeat: no-repeat;
     background-size: cover;
-
 }
 
 /* visited link */
@@ -16,4 +15,7 @@ a:hover {
 }
 .my_banner{
 	min-height: 100%;
+}
+.my_navbar{
+	opacity: 100%;
 }
