@@ -6,7 +6,7 @@ from django.utils import timezone
 class Post(models.Model):
 	title = models.CharField(max_length=200)
 	image = models.CharField(max_length=500)
-	time_taken = models.IntegerField()
+	time_taken = models.FloatField()
 	ingredients = models.TextField()
 	text = models.TextField()
 	published_date = models.DateTimeField(blank=True, null=True)
