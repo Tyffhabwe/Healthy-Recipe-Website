@@ -65,14 +65,7 @@ def background_view(request):
 
 	return HttpResponse("Done!")
 
-	# Send the Test!! log message to standard out
-
-	"""with open('cms_scrape.csv', 'r') as csv_file:
-		csv_reader = csv.reader(csv_file)
-		for line in csv_reader:
-			logger.error(line)
-			
-			#Post(title=headline, image=image, article_link=article_link, ingredients=ingredients, text=instructions).save()
-			return HttpResponse("NOT HI!")"""
+def contact(request):
+	return render(request, 'food/contact.html')
 			
 
