@@ -4,6 +4,7 @@ body {
 
 .bg-pink{
   background-color: #E91E63;
+  color: #ffffff;
 }
 #sidebar-wrapper {
   min-height: 100vh;
