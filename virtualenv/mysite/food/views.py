@@ -60,6 +60,9 @@ def post_list(request):
 	posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
 	return render(request, 'food/post_list.html', {'posts': posts})
 
+def home_page(request):
+	return render(request, 'food/home_page.html')
+
 def background_view(request):
 	recipe_main()
 
