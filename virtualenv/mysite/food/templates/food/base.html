@@ -21,7 +21,7 @@
     <div class="border-right bg-pink" id="sidebar-wrapper">
       <div class="sidebar-heading">CBHS Food Recipes</div>
       <div class="list-group list-group-flush">
-        <a href="" class="list-group-item list-group-item-action bg-pink">Home</a>
+        <a href="{% url 'home_page' %}" class="list-group-item list-group-item-action bg-pink">Home</a>
         <a href="{% url 'contact' %}" class="list-group-item list-group-item-action bg-pink">Contact</a>
         <a href="#" class="list-group-item list-group-item-action bg-pink">About</a>
         <a href="{% url 'post_list' %}" class="list-group-item list-group-item-action bg-pink">Food</a>
@@ -43,7 +43,7 @@
         </button>
       </nav>
 
-      <div class="container-fluid">
+      <div class="yellow">
         {% block content %}
         {% endblock %}
       </div>

@@ -2,7 +2,6 @@ from django.shortcuts import render, get_object_or_404, HttpResponse
 from bs4 import BeautifulSoup
 from .models import Post
 from django.utils import timezone
-from background_task import background
 import os
 import requests
 import csv
