@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, HttpResponse
 from bs4 import BeautifulSoup
 from .models import Post
 from django.utils import timezone
+from django.core.paginator import Paginator
 import os
 import requests
 import csv
@@ -56,8 +57,13 @@ def post_detail(request, pk):
 
 
 def post_list(request):
-	posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-	return render(request, 'food/post_list.html', {'posts': posts})
+	posts = Post.objects.all()
+	paginator = Paginator(posts, 6)
+
+	page_number = request.GET.get('page')
+	page_obj = paginator.get_page(page_number)
+	#posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+	return render(request, 'food/post_list.html', {'page_obj': page_obj})
 
 def home_page(request):
 	return render(request, 'food/home_page.html')
