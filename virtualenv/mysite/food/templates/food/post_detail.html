@@ -3,15 +3,15 @@
 {% block content %}
 <style type="text/css">
 	img{
-		height: 50vh;
-		width: 110%;
+		height: 70vh;
+		width: 90%;
 	}
-	.hello{
-		height: 100px;
+	li{
+		color: blue;
 	}
 </style>
 
-<div class="post">
+<div class="w3-container">
 		<img src="{{ post.image }}">
 		<h4>{{ post.title }}</h4>
 		<p><a href="{{ post.article_link }}">Original link</a></p>
@@ -19,7 +19,7 @@
 			<div class="col-md-6">
 				<p>{{ post.text|linebreaks }}</p>
 			</div>
-			<div class="col-md-6 hello">
+			<div class="col-md-6">
 				<p>{{ post.ingredients|linebreaks}}</p>
 			</div>
 		</div><!-- end row -->

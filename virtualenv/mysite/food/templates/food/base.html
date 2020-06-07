@@ -8,65 +8,54 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- W3 CSS -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <!-- CSS -->
    <link href="{% static 'css/stylesheet.css' %}" rel="stylesheet">
 
+   <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
   </head>
   <body>
-  	<div class="d-flex" id="wrapper">
-
     <!-- Sidebar -->
-    <strong>
-    <div class = "my-sidebar">
-    <div class="border-right bg-pink" id="sidebar-wrapper">
-      <div class="sidebar-heading">CBHS Food Recipes</div>
-      <div class="list-group list-group-flush">
-        <a href="{% url 'home_page' %}" class="list-group-item list-group-item-action bg-pink">Home</a>
-        <a href="{% url 'contact' %}" class="list-group-item list-group-item-action bg-pink">Contact</a>
-        <a href="#" class="list-group-item list-group-item-action bg-pink">About</a>
-        <a href="{% url 'post_list' %}" class="list-group-item list-group-item-action bg-pink">Food</a>
-        <a href="https://www.foodinaminute.co.nz/Recipe-Categories/Dinner-Ideas" class="list-group-item list-group-item-action bg-pink" target="_blank">Source</a>
-        <!--<a href="#" class="list-group-item list-group-item-action bg-pink">Status</a>-->
-      </div>
-    </div>
+<div class="w3-sidebar w3-bar-block w3-border-right w3-pink my-sidebar" style="display:none" id="mySidebar">
+  <button onclick="w3_close()" class="w3-bar-item w3-xlarge">Close &times;</button>
+  <a href="{% url 'home_page' %}" class="w3-bar-item w3-button w3-large">Home</a>
+  <a href="{% url 'contact' %}" class="w3-bar-item w3-button w3-large">Contact</a>
+  <a href="{% url 'post_list' %}" class="w3-bar-item w3-button w3-large">Food</a>
+  <a href="https://www.foodinaminute.co.nz/Recipes/" class="w3-bar-item w3-button w3-large">Source</a>
+
+</div>
+
+<!-- Page Content -->
+<div class="w3">
+  <button class="w3-button w3-xlarge" onclick="w3_open()">☰</button>
+</div>
+  <div class="content">
+    {% block content %}
+    {% endblock %}
   </div>
-</strong>
-    <!-- /#sidebar-wrapper -->
 
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
 
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
-        <button class="btn" id="menu-toggle"><span class="navbar-toggler-icon"></span></button>
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
 
-        <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>-->
-        </button>
-      </nav>
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
 
-      <div class="baggot">
-        {% block content %}
-        {% endblock %}
-      </div>
-    </div>
-    <!-- /#page-content-wrapper -->
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
-  </div>
-  <!-- /#wrapper -->
-    
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-    <!-- Menu Toggle Script -->
-  <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });
-  </script>
   </body>
 </html>
